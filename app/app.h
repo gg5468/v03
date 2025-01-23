@@ -17,6 +17,7 @@ namespace vsite::oop::v3
 		void add(student s);
 		unsigned int has_grade(unsigned int g);
 		unsigned int starts_with_letter(char i);
+		~results();
 	};
 
 	class array {
@@ -33,5 +34,6 @@ namespace vsite::oop::v3
 			void push_back(double v);
 			array(array && other);
 			array(const array & other);
+			~array();
 		};
 };

@@ -9,6 +9,10 @@ namespace vsite::oop::v3
 		students = new student[c];
 		cap = c;
 	};
+	results::~results() {
+		delete[] students;
+		students = nullptr;
+	}
 	void results::add(student s) {
 		if (size < cap) {
 			students[size] = s;
@@ -63,6 +67,7 @@ namespace vsite::oop::v3
 			new_arr[j] = arr[j];
 		}
 		new_arr[cap] = v;
+		delete[] arr;
 		arr = new_arr;
 		cap = new_cap;
 	}
@@ -78,5 +83,10 @@ namespace vsite::oop::v3
 		for (unsigned int i = 0; i < cap; i++) {
 			arr[i] = other.arr[i];
 		}
+	}
+
+
+	array::~array() {
+		delete[] arr;
 	}
 };
